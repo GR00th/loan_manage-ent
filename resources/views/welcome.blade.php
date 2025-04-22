@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Hind:wght@600&family=Open+Sans:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Hind:wght@600&family=Open+Sans:wght@400;600&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind:wght@600&family=Open+Sans:wght@400;600&display=swap" media="print" onload="this.media='all'">
+    
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="{{ asset('landingPage/css/style.css') }}" as="style">
     <link href="{{ asset('landingPage/css/style.css') }}" rel="stylesheet" />
 
     <title>{{ config('app.name') }}</title>
@@ -40,7 +42,7 @@
         <div class="header__wrapper">
           <a class="c-link" href="#">
             <div class="c-logo">
-              <img src="{{ asset('logo.jpg') }}" alt="Logo" class="c-logo__img" style="border-radius:100%" />
+              <img src="{{ asset('logo.jpg') }}" alt="Logo" class="c-logo__img" style="border-radius:100%" loading="eager" />
             </div>
           </a>
           <nav class="c-nav">
@@ -117,6 +119,7 @@
                 class="c-hero__img"
                 src="{{ asset('landingPage/img/dashboard2.PNG') }}"
                 alt="Dashboard"
+                loading="lazy"
               />
             </div>
           </div>
@@ -143,7 +146,7 @@
                 </p>
               </div>
               <div class="c-card__img-holder">
-                <img class="c-card__img" src="{{ asset('landingPage/img/card-1.png') }}" alt="" />
+                <img class="c-card__img" src="{{ asset('landingPage/img/card-1.png') }}" alt="" loading="lazy" />
               </div>
             </article>
 
@@ -157,7 +160,7 @@
                 </p>
               </div>
               <div class="c-card__img-holder">
-                <img class="c-card__img" src="{{ asset('landingPage/img/card-2.png') }}" alt="" />
+                <img class="c-card__img" src="{{ asset('landingPage/img/card-2.png') }}" alt="" loading="lazy" />
               </div>
             </article>
 
@@ -171,7 +174,7 @@
                 </p>
               </div>
               <div class="c-card__img-holder">
-                <img class="c-card__img" src="{{ asset('landingPage/img/card-3.png') }}" alt="" />
+                <img class="c-card__img" src="{{ asset('landingPage/img/card-3.png') }}" alt="" loading="lazy" />
               </div>
             </article>
           </div>
@@ -183,7 +186,7 @@
           <div class="box box--grid">
             <article class="c-feature">
               <div class="c-feature__img-holder">
-                <img class="c-feature__img" src="{{ asset('landingPage/img/feature-1.png') }}" alt="" />
+                <img class="c-feature__img" src="{{ asset('landingPage/img/feature-1.png') }}" alt="" loading="lazy" />
               </div>
               <div class="c-feature__content">
                 <h3 class="c-feature__title heading heading--3">
@@ -197,7 +200,7 @@
 
             <article class="c-feature">
               <div class="c-feature__img-holder">
-                <img class="c-feature__img" src="{{ asset('landingPage/img/feature-2.png') }}" alt="" />
+                <img class="c-feature__img" src="{{ asset('landingPage/img/feature-2.png') }}" alt="" loading="lazy" />
               </div>
               <div class="c-feature__content">
                 <h3 class="c-feature__title heading heading--3">
@@ -211,14 +214,14 @@
 
             <article class="c-feature">
               <div class="c-feature__img-holder">
-                <img class="c-feature__img" src="{{ asset('landingPage/img/feature-3.png') }}" alt="" />
+                <img class="c-feature__img" src="{{ asset('landingPage/img/feature-3.png') }}" alt="" loading="lazy" />
               </div>
               <div class="c-feature__content">
                 <h3 class="c-feature__title heading heading--3">
                   Scalability
                 </h3>
                 <p class="c-paragraph c-feature__text">
-                  If your business has a website you can integrate it with LendFy to receive applications over API. Alternatively, if you don’t have a website we can always help you build one.
+                  If your business has a website you can integrate it with LendFy to receive applications over API. Alternatively, if you don't have a website we can always help you build one.
                 </p>
               </div>
             </article>

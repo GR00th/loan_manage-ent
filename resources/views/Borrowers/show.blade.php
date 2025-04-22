@@ -24,9 +24,15 @@
 
     <!-- Main content -->
     <section class="content">
-
-
-
+        <div class="container-fluid">
+            <div class="row mb-3">
+                <div class="col-12">
+                    <a href="{{ route('borrower.print', $borrower->id) }}" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-print"></i> Print Details
+                    </a>
+                </div>
+            </div>
+        </div>
 
         <section style="background-color: #eee;">
             <div class="container py-5">

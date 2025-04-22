@@ -48,11 +48,13 @@ class AdminPanelProvider extends PanelProvider
                     'sm' => 2,
                 ]),
         ])
-        // ->brandLogo(asset('Logos/logo2.png'))
-        // ->brandLogoHeight('4rem')
-        // ->favicon(asset('Logos/logo2.png'))
+        ->brandName('Loan Management')
+        ->brandLogo(asset('Logos/icono-sl.png'))
+        ->brandLogoHeight('3rem')
+        ->darkModeBrandLogo(asset('Logos/icono-sl.png'))
+        ->favicon(asset('Logos/icono-sl.png'))
         ->sidebarCollapsibleOnDesktop()
-        
+        ->topNavigation(false)
         ->login()
         ->registration()
         ->passwordReset()
@@ -61,33 +63,30 @@ class AdminPanelProvider extends PanelProvider
         ->default()
         ->login()
         ->colors([
-                'primary' => Color::Amber,
-            ])
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
-            ->pages([
-                Pages\Dashboard::class,
-                
-            ])
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
-            ->widgets([
-                // Widgets\AccountWidget::class,
-                // Widgets\FilamentInfoWidget::class,
-                \App\Filament\Widgets\PastDueLoans::class,
-            ])
-            ->middleware([
-                EncryptCookies::class,
-                AddQueuedCookiesToResponse::class,
-                StartSession::class,
-                AuthenticateSession::class,
-                ShareErrorsFromSession::class,
-                VerifyCsrfToken::class,
-                SubstituteBindings::class,
-                DisableBladeIconComponents::class,
-                DispatchServingFilamentEvent::class,
-            ])
-            ->authMiddleware([
-                Authenticate::class,
-            ]);
+            'primary' => Color::Amber,
+        ])
+        ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
+        ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+        ->pages([
+            Pages\Dashboard::class,
+        ])
+        ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+        ->widgets([
+            \App\Filament\Widgets\PastDueLoans::class,
+        ])
+        ->middleware([
+            EncryptCookies::class,
+            AddQueuedCookiesToResponse::class,
+            StartSession::class,
+            AuthenticateSession::class,
+            ShareErrorsFromSession::class,
+            VerifyCsrfToken::class,
+            SubstituteBindings::class,
+            DisableBladeIconComponents::class,
+            DispatchServingFilamentEvent::class,
+        ])
+        ->authMiddleware([
+            Authenticate::class,
+        ]);
     }
 }

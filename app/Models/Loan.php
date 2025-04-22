@@ -28,6 +28,11 @@ class Loan extends Model
         return $this->hasMany(LoanPayment::class);
     }
 
+    public function repayments()
+    {
+        return $this->hasMany(Repayments::class);
+    }
+
     public function getLoanDueDateAttribute($value) {
         return date('d,F Y', strtotime($value));
     }
