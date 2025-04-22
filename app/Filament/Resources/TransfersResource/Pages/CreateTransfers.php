@@ -4,7 +4,10 @@ namespace App\Filament\Resources\TransfersResource\Pages;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Filament\Resources\TransfersResource;
+<<<<<<< HEAD
 use Filament\Notifications\Notification;
+=======
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
 use Bavix\Wallet\Models\Wallet;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
@@ -22,6 +25,7 @@ class CreateTransfers extends CreateRecord
        
         $firstWallet = Wallet::findOrFail($data['from_this_account']);
         $lastWallet = Wallet::findOrFail($data['to_this_account']);
+<<<<<<< HEAD
         try{
             $firstWallet->transfer($lastWallet, $data['amount_to_transfer']);
         }
@@ -37,6 +41,9 @@ class CreateTransfers extends CreateRecord
         }
         
        
+=======
+        $firstWallet->transfer($lastWallet, $data['amount_to_transfer']);
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
 
         return $firstWallet;
     }

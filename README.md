@@ -3,6 +3,7 @@
 
 ## Requirements
 
+<<<<<<< HEAD
 - PHP >= 8.2
 
 ![sample1](https://github.com/user-attachments/assets/f57b4435-24a4-467d-9518-d8397b2e81ce)
@@ -10,6 +11,11 @@
 ![sample3](https://github.com/user-attachments/assets/0e3bbcb2-d370-481d-b47b-e22b7c0addd1)
 ![sample4](https://github.com/user-attachments/assets/3bd6032a-a62e-4469-94ff-74a7bfc1058d)
 
+=======
+- PHP >= 8.1
+
+[Demo!](https://github.com/chandachewe10/loan-management-system/assets/82529756/e7bd7b63-0b5e-43bc-88e1-90469e4f7111)
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
 
 ## How it works
 
@@ -34,6 +40,7 @@ The Loan Management software is a web-based application that helps manage and tr
 14. Update Payments for loans
 15. Assign roles, assign permissions, revoke roles Etc 
 
+<<<<<<< HEAD
 
 ## Demo Credentials
 
@@ -44,6 +51,8 @@ The Loan Management software is a web-based application that helps manage and tr
 
 
 
+=======
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
 ## Installation
 
 ### Clone the repository
@@ -52,8 +61,26 @@ Please follow carefully the installation and use of this web framework of the Lo
 ```bash
 1. git clone https://github.com/chandachewe10/loan-management-system.git
 2. composer install
+<<<<<<< HEAD
 3. copy .env.example .env and set DB Credentials
 4. php artisan key:generate
+=======
+2.2 
+sudo apt-get update
+sudo apt-get install php-xml
+sudo apt-get update
+sudo apt-get install php-gd
+3. copy .env.example .env and set DB Credentials
+4. php artisan key:generate
+4.1 sudo apt update && sudo apt install mysql-server
+4.2 
+sudo mysql
+SELECT user, host, plugin FROM mysql.user;
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'tu_contraseña_segura';
+FLUSH PRIVILEGES;
+exit:
+php artisan config:clear
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
 5. php artisan migrate 
 
 ```
@@ -75,6 +102,7 @@ Publish policies
 
 ```bash
 php artisan shield:generate --all
+<<<<<<< HEAD
 ```
 
 Start your Application 
@@ -90,9 +118,38 @@ Copy the mail credentials for your Laravel app from Mailtrap and update the corr
 ```
 
 
+=======
+php artisan serve
+
+```
+Finally start the application as usual. Add `/admin` to your localhost url to access the login page e.g if your localhost is `http://127.0.0.1` then the login will be `http://127.0.0.1:8000/admin` 
+
+```bash
+Set up email notifications using [Mailtrap](https://mailtrap.io). Copy the mail credentials for your Laravel app from Mailtrap and update the corresponding settings in your `.env` file.
+```
+
+
+
+![Super Admin Dashboard](public/samples/sample1.png)
+![Super Admin Dashboard](public/samples/sample2.png)
+![Super Admin Dashboard](public/samples/sample3.png)
+![Super Admin Dashboard](public/samples/sample4.png)
+
+
+
+
+
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
 ## Contributions
 Contributions to the Loan Management software are welcome! If you have suggestions, bug reports, or feature requests, please submit an issue or a pull request on the GitHub repository.
 
 ## License
+<<<<<<< HEAD
 The Loan Management software source code is publicly available but is licensed under the Proprietary License Agreement attached in this repo. Modifications, enhancements and improvements are allowed, but redistribution and commercial use require written consent from MACROIT
 
+=======
+The Loan Management software is open-source and released under the MIT License.
+
+
+# loan_manage-ent
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0

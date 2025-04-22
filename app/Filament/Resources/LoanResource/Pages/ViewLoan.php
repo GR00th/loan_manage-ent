@@ -5,11 +5,14 @@ namespace App\Filament\Resources\LoanResource\Pages;
 use App\Filament\Resources\LoanResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ViewRecord;
+<<<<<<< HEAD
 use Filament\Infolists\Components\Section;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Components\ViewEntry;
 use Filament\Infolists\Infolist;
 use Filament\Actions\Action;
+=======
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
 
 class ViewLoan extends ViewRecord
 {
@@ -18,6 +21,7 @@ class ViewLoan extends ViewRecord
     protected function getHeaderActions(): array
     {
         return [
+<<<<<<< HEAD
             Action::make('print')
                 ->label('Print Details')
                 ->icon('heroicon-o-printer')
@@ -74,4 +78,9 @@ class ViewLoan extends ViewRecord
                     ->collapsible(false)
             ]);
     }
+=======
+            Actions\EditAction::make(),
+        ];
+    }
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
 }

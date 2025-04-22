@@ -248,7 +248,11 @@ class LoanResource extends Resource
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
+<<<<<<< HEAD
                 // Tables\Actions\EditAction::make(),
+=======
+                Tables\Actions\EditAction::make(),
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -264,7 +268,11 @@ class LoanResource extends Resource
     public static function getRelations(): array
     {
         return [
+<<<<<<< HEAD
             RelationManagers\PaymentsRelationManager::class,
+=======
+            //
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
         ];
     }
 

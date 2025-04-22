@@ -9,6 +9,7 @@ class Repayments extends Model
 {
     use HasFactory;
 
+<<<<<<< HEAD
     protected $fillable = [
         'loan_id',
         'payments',
@@ -57,4 +58,15 @@ class Repayments extends Model
     public function getCreatedAtAttribute($value) {
         return date('d M Y H:i:s', strtotime($value));
     }
+=======
+    public function loan_number()
+{
+    return $this->belongsTo(Loan::class, 'loan_id', 'id');
+}
+
+public function getCreatedAtAttribute($value) {
+    return date('d,F Y H:m:i', strtotime($value));
+}
+  
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
 }

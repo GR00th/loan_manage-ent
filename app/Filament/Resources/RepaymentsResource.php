@@ -34,7 +34,11 @@ class RepaymentsResource extends Resource
                 Forms\Components\Select::make('loan_id')
                     ->label('Loan Number')
                     ->prefixIcon('heroicon-o-wallet')
+<<<<<<< HEAD
                     ->relationship('loan', 'loan_number')
+=======
+                    ->relationship('loan_number', 'loan_number')
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
                     ->searchable()
                     ->preload()
                     ->live(onBlur: true)
@@ -81,6 +85,7 @@ class RepaymentsResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+<<<<<<< HEAD
             ->query(function ($query) {
                 return $query->with('loan');
             })
@@ -145,6 +150,31 @@ class RepaymentsResource extends Resource
                     ->searchable(),
             ])
             ->defaultSort('created_at', 'desc')
+=======
+            ->columns([
+                Tables\Columns\TextColumn::make('created_at')
+                ->label('Payments Date')
+                    ->searchable(),
+                    Tables\Columns\TextColumn::make('reference_number')
+                    ->label('Reference Number')
+                        ->searchable(),
+                Tables\Columns\TextColumn::make('loan_number.loan_number')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('loan_number.loan_status')
+                ->label('Loan Status')
+                ->badge()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('payments')
+                    ->searchable(),
+                    // Tables\Columns\TextColumn::make('loan_number.repayment_amount')
+                    // ->label('Total Repayments')
+                    // ->searchable(),
+                Tables\Columns\TextColumn::make('balance')
+                    ->searchable(),
+                   
+                  
+            ])
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
             ->filters([
                 Tables\Filters\SelectFilter::make('payments_method')
                     ->options([
@@ -153,6 +183,7 @@ class RepaymentsResource extends Resource
                         'pemic' => 'PEMIC',
                         'cheque' => 'Cheque',
                         'cash' => 'Cash',
+<<<<<<< HEAD
                     ]),
                 Tables\Filters\SelectFilter::make('loan.loan_status')
                     ->label('Loan Status')
@@ -167,6 +198,15 @@ class RepaymentsResource extends Resource
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
+=======
+
+
+                    ]),
+            ])
+            ->actions([
+                // Tables\Actions\ViewAction::make(),
+                // Tables\Actions\EditAction::make(),
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

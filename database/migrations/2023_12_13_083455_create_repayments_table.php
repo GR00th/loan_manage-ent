@@ -18,7 +18,10 @@ return new class extends Migration
             $table->decimal('payments', 64, 0);
             $table->decimal('principal', 64, 0);
             $table->string('payments_method');
+<<<<<<< HEAD
             $table->string('reference_number')->nullable();
+=======
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
             $table->foreign('loan_id')->references('id')->on('loans')->onDelete('cascade');
             $table->timestamps();
         });

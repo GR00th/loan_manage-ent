@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "720b3c31e0e8e12ac16648aaf6f5314a",
+=======
+    "content-hash": "3afaa1c1a8d39ebc0130c1739e0f62d7",
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -127,6 +131,7 @@
             "time": "2024-10-01T13:55:55+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "barryvdh/laravel-dompdf",
             "version": "v3.1.1",
             "source": {
@@ -204,6 +209,8 @@
             "time": "2025-02-13T15:07:54+00:00"
         },
         {
+=======
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
             "name": "bavix/laravel-wallet",
             "version": "10.1.7",
             "source": {
@@ -1562,6 +1569,7 @@
             "time": "2024-02-05T11:56:58+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "dompdf/dompdf",
             "version": "v3.1.0",
             "source": {
@@ -1717,6 +1725,8 @@
             "time": "2024-04-29T13:26:35+00:00"
         },
         {
+=======
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
             "name": "dragonmantank/cron-expression",
             "version": "v3.4.0",
             "source": {
@@ -6999,6 +7009,7 @@
             "time": "2024-02-26T18:08:49+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "sabberworm/php-css-parser",
             "version": "v8.8.0",
             "source": {
@@ -7064,6 +7075,8 @@
             "time": "2025-03-23T17:59:05+00:00"
         },
         {
+=======
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
             "name": "spatie/color",
             "version": "1.7.0",
             "source": {

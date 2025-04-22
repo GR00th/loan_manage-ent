@@ -58,7 +58,13 @@ class CreateRepayments extends CreateRecord
             'balance' => $new_balance,
             'payments_method' => $data['payments_method'],
             'reference_number' => $data['reference_number'] ?? 'No reference Was Entered by '.auth()->user()->name .' - '. auth()->user()->email,
+<<<<<<< HEAD
             'principal' => $principal_amount,
+=======
+            'loan_number' => $loan_number,
+            'principal' => $principal_amount,
+
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
         ]);
       
 

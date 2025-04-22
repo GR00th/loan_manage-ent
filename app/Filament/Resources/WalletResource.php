@@ -36,10 +36,13 @@ class WalletResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('meta')
                     ->label('Currency')
+<<<<<<< HEAD
                     ->formatStateUsing(function ($state, $record) {
                         
                         return $record->meta['currency'] ?? '';
                     })
+=======
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
                     ->required()
                     ->prefixIcon('fas-money-bill'),
                     Forms\Components\TextInput::make('balance')
@@ -52,7 +55,10 @@ class WalletResource extends Resource
                     ->label('Add Funds')
                     ->required()
                     ->numeric()
+<<<<<<< HEAD
                     ->minValue(0)
+=======
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
                     ->prefixIcon('fas-dollar-sign'),
                     
                
@@ -66,7 +72,10 @@ class WalletResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+<<<<<<< HEAD
         ->recordUrl(null)
+=======
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
             ->columns([
 
                 Tables\Columns\TextColumn::make('name')

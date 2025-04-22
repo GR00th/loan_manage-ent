@@ -1,6 +1,9 @@
 <x-guest-layout>
     <x-authentication-card>
+<<<<<<< HEAD
       
+=======
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
         <x-slot name="logo">
             <x-authentication-card-logo />
         </x-slot>

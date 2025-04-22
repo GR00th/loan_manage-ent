@@ -16,6 +16,7 @@ class ListRepayments extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+<<<<<<< HEAD
 
     protected function getTableQuery(): \Illuminate\Database\Eloquent\Builder
     {
@@ -41,4 +42,6 @@ class ListRepayments extends ListRecords
         
         $this->refreshRecords();
     }
+=======
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
 }

@@ -1,10 +1,14 @@
 <?php
 
 use App\Http\Controllers\BorrowersController;
+<<<<<<< HEAD
 use App\Http\Controllers\LoanController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Repayments;
 use Illuminate\Support\Facades\DB;
+=======
+use Illuminate\Support\Facades\Route;
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +34,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
+<<<<<<< HEAD
     Route::resource('borrower', BorrowersController::class);
     Route::get('/borrower/{borrower}/print', [BorrowersController::class, 'print'])->name('borrower.print');
 
@@ -87,4 +92,7 @@ Route::middleware([
         ];
         dd($data);
     });
+=======
+    Route::resource('borrower',BorrowersController::class);
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
 });

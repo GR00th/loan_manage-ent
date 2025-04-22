@@ -9,7 +9,10 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+<<<<<<< HEAD
         "barryvdh/laravel-dompdf": "^3.1",
+=======
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
         "bavix/laravel-wallet": "^10.0",
         "bezhansalleh/filament-shield": "^3.1",
         "filament/filament": "^3.2",

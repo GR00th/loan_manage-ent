@@ -24,6 +24,7 @@
 
     <!-- Main content -->
     <section class="content">
+<<<<<<< HEAD
         <div class="container-fluid">
             <div class="row mb-3">
                 <div class="col-12">
@@ -33,6 +34,11 @@
                 </div>
             </div>
         </div>
+=======
+
+
+
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
 
         <section style="background-color: #eee;">
             <div class="container py-5">

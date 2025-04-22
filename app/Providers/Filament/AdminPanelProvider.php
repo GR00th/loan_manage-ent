@@ -48,6 +48,7 @@ class AdminPanelProvider extends PanelProvider
                     'sm' => 2,
                 ]),
         ])
+<<<<<<< HEAD
         ->brandName('Loan Management')
         ->brandLogo(asset('Logos/icono-sl.png'))
         ->brandLogoHeight('3rem')
@@ -55,6 +56,13 @@ class AdminPanelProvider extends PanelProvider
         ->favicon(asset('Logos/icono-sl.png'))
         ->sidebarCollapsibleOnDesktop()
         ->topNavigation(false)
+=======
+        // ->brandLogo(asset('Logos/logo2.png'))
+        // ->brandLogoHeight('4rem')
+        // ->favicon(asset('Logos/logo2.png'))
+        ->sidebarCollapsibleOnDesktop()
+        
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
         ->login()
         ->registration()
         ->passwordReset()
@@ -63,6 +71,7 @@ class AdminPanelProvider extends PanelProvider
         ->default()
         ->login()
         ->colors([
+<<<<<<< HEAD
             'primary' => Color::Amber,
         ])
         ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
@@ -88,5 +97,34 @@ class AdminPanelProvider extends PanelProvider
         ->authMiddleware([
             Authenticate::class,
         ]);
+=======
+                'primary' => Color::Amber,
+            ])
+            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
+            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->pages([
+                Pages\Dashboard::class,
+                
+            ])
+            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            ->widgets([
+                // Widgets\AccountWidget::class,
+                // Widgets\FilamentInfoWidget::class,
+            ])
+            ->middleware([
+                EncryptCookies::class,
+                AddQueuedCookiesToResponse::class,
+                StartSession::class,
+                AuthenticateSession::class,
+                ShareErrorsFromSession::class,
+                VerifyCsrfToken::class,
+                SubstituteBindings::class,
+                DisableBladeIconComponents::class,
+                DispatchServingFilamentEvent::class,
+            ])
+            ->authMiddleware([
+                Authenticate::class,
+            ]);
+>>>>>>> 835038c2e68d061091e2e27633b00e9a18feeed0
     }
 }
