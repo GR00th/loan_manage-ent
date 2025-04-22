@@ -34,7 +34,7 @@ class RepaymentsResource extends Resource
                 Forms\Components\Select::make('loan_id')
                     ->label('Loan Number')
                     ->prefixIcon('heroicon-o-wallet')
-                    ->relationship('loan_number', 'loan_number')
+                    ->relationship('loan', 'loan_number')
                     ->searchable()
                     ->preload()
                     ->live(onBlur: true)
@@ -81,30 +81,70 @@ class RepaymentsResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-         ->recordUrl(null)
+            ->query(function ($query) {
+                return $query->with('loan');
+            })
+            ->recordUrl(null)
             ->columns([
+                Tables\Columns\TextColumn::make('id')
+                    ->label('ID')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
-                ->label('Payments Date')
+                    ->label('Payment Date')
+                    ->dateTime()
+                    ->sortable()
                     ->searchable(),
-                    Tables\Columns\TextColumn::make('reference_number')
+                Tables\Columns\TextColumn::make('reference_number')
                     ->label('Reference Number')
-                        ->searchable(),
-                Tables\Columns\TextColumn::make('loan_number.loan_number')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('loan_number.loan_status')
-                ->label('Loan Status')
-                ->badge()
-                    ->searchable(),
+                    ->searchable()
+                    ->copyable(),
+                Tables\Columns\TextColumn::make('loan.loan_number')
+                    ->label('Loan Number')
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('payments')
+                    ->label('Amount Paid')
+                    ->money('USD')
+                    ->sortable()
                     ->searchable(),
-                    // Tables\Columns\TextColumn::make('loan_number.repayment_amount')
-                    // ->label('Total Repayments')
-                    // ->searchable(),
+                Tables\Columns\TextColumn::make('principal')
+                    ->label('Principal Amount')
+                    ->money('USD')
+                    ->sortable()
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('balance')
+                    ->label('Remaining Balance')
+                    ->money('USD')
+                    ->sortable()
                     ->searchable(),
-                   
-                  
+                Tables\Columns\TextColumn::make('payments_method')
+                    ->label('Payment Method')
+                    ->badge()
+                    ->formatStateUsing(fn (string $state): string => str_replace('_', ' ', ucfirst($state)))
+                    ->color(fn (string $state): string => match ($state) {
+                        'bank_transfer' => 'info',
+                        'mobile_money' => 'success',
+                        'pemic' => 'warning',
+                        'cheque' => 'primary',
+                        'cash' => 'success',
+                        default => 'gray',
+                    })
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('loan.loan_status')
+                    ->label('Loan Status')
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'active' => 'success',
+                        'pending' => 'warning',
+                        'completed' => 'info',
+                        'defaulted' => 'danger',
+                        'fully_paid' => 'success',
+                        'partially_paid' => 'warning',
+                        default => 'gray',
+                    })
+                    ->searchable(),
             ])
+            ->defaultSort('created_at', 'desc')
             ->filters([
                 Tables\Filters\SelectFilter::make('payments_method')
                     ->options([
@@ -113,13 +153,20 @@ class RepaymentsResource extends Resource
                         'pemic' => 'PEMIC',
                         'cheque' => 'Cheque',
                         'cash' => 'Cash',
-
-
+                    ]),
+                Tables\Filters\SelectFilter::make('loan.loan_status')
+                    ->label('Loan Status')
+                    ->options([
+                        'active' => 'Active',
+                        'pending' => 'Pending',
+                        'completed' => 'Completed',
+                        'defaulted' => 'Defaulted',
+                        'fully_paid' => 'Fully Paid',
+                        'partially_paid' => 'Partially Paid',
                     ]),
             ])
             ->actions([
-                // Tables\Actions\ViewAction::make(),
-                // Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
