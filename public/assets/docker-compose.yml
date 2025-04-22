@@ -1,7 +1,9 @@
 version: "3"
 services:
   admin:
-    build: .
+    build:
+      context: ../..
+      dockerfile: public/assets/Dockerfile
     command: npm run dev
     ports:
       - 3000:3000
@@ -9,3 +11,15 @@ services:
     volumes:
     - .:/code
     - /code/node_modules
+    environment:
+      - MAIL_HOST=mailpit
+      - MAIL_PORT=1025
+    depends_on:
+      - mailpit
+
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - "1025:1025"   # SMTP port
+      - "8025:8025"   # Web interface port
+    restart: unless-stopped
